@@ -11,15 +11,18 @@ const toggl = new Toggl({
 const tagsDurations = {};
 
 const entries = await toggl.timeEntry.list({
-    startDate: "2024-03-24",
-    endDate: "2024-03-25"
+    startDate: "2024-03-20",
+    endDate: "2024-03-26"
 });
 
-entries.forEach((timeEntry) => {
-    timeEntry.tags.forEach((tagName) => {
-        tagsDurations[tagName] ??= 0;
-        tagsDurations[tagName] += timeEntry.duration;
-    });
+entries
+    .filter((timeEntry) => timeEntry.tags.includes("apport-panda"))
+    .forEach((timeEntry) => {
+        timeEntry.tags.forEach((tagName) => {
+            tagsDurations[tagName] ??= 0;
+            tagsDurations[tagName] += timeEntry.duration;
+        }
+    );
 });
 
 function durationToHuman(seconds) {
