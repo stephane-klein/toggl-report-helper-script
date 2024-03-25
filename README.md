@@ -1,4 +1,4 @@
-# Script to help me generate my daily time reports
+# Script to help me to generate my daily time reports
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
