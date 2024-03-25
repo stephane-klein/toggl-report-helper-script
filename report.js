@@ -37,8 +37,3 @@ tagNames.sort((a, b) => tagsDurations[b] - tagsDurations[a]);
 tagNames.forEach((key) => {
     console.log(`- ${key} ${durationToHuman(tagsDurations[key])}`);
 });
-/*
-Object.entries(tagsDurations).forEach(([key, value]) => {
-    console.log(`- ${key} ${durationToHuman(value)}`);
-});
-*/
