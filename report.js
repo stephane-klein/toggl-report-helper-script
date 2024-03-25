@@ -11,8 +11,8 @@ const toggl = new Toggl({
 const tagsDurations = {};
 
 const entries = await toggl.timeEntry.list({
-    startDate: "2024-03-23",
-    endDate: "2024-03-24"
+    startDate: "2024-03-24",
+    endDate: "2024-03-25"
 });
 
 entries.forEach((timeEntry) => {
@@ -35,5 +35,5 @@ const tagNames = Object.keys(tagsDurations);
 tagNames.sort((a, b) => tagsDurations[b] - tagsDurations[a]);
 
 tagNames.forEach((key) => {
-    console.log(`- ${key} ${durationToHuman(tagsDurations[key])}`);
+    console.log(`- ${durationToHuman(tagsDurations[key])} ${key}`);
 });
